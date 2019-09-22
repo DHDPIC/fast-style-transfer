@@ -1,3 +1,4 @@
+import scipy.misc
 from __future__ import print_function
 import sys, os, pdb
 sys.path.insert(0, 'src')
