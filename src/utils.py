@@ -4,8 +4,8 @@ import imageio
 
 def save_img(out_path, img):
     img = np.clip(img, 0, 255).astype(np.uint8)
-#scipy.misc.imsave(out_path, img)
-imageio.imread(img)
+    scipy.misc.imsave(out_path, img)
+
 
 def scale_img(style_path, style_scale):
     scale = float(style_scale)
@@ -16,7 +16,8 @@ def scale_img(style_path, style_scale):
     return style_target
 
 def get_img(src, img_size=False):
-   img = scipy.misc.imread(src, mode='RGB') # misc.imresize(, (256, 256, 3))
+    #img = scipy.misc.imread(src, mode='RGB') # misc.imresize(, (256, 256, 3))
+   imageio.imread(src)
    if not (len(img.shape) == 3 and img.shape[2] == 3):
        img = np.dstack((img,img,img))
    if img_size != False:
