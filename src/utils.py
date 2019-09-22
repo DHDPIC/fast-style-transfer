@@ -1,8 +1,11 @@
 import scipy.misc, numpy as np, os, sys
 
+import imageio
+
 def save_img(out_path, img):
     img = np.clip(img, 0, 255).astype(np.uint8)
-    scipy.misc.imsave(out_path, img)
+#scipy.misc.imsave(out_path, img)
+imageio.imread(img)
 
 def scale_img(style_path, style_scale):
     scale = float(style_scale)
